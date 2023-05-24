@@ -1,7 +1,11 @@
 #!/bin/bash
 
+# Update and Install Updates
+sudo apt update 
+sudo apt upgrade -y
+
 # Install Apache, MariaDB, PHP 8.1, and unzip
-sudo apt install apache2 mariadb-server php8.1 unzip php8.1-mbstring
+sudo apt install apache2 mariadb-server php8.1 unzip 
 
 # Start Apache and MariaDB 
 sudo systemctl start apache2 
@@ -26,7 +30,7 @@ read -p "Enter OpenEMR admin password: " admin_pass
 read -p "Enter your server's hostname: " hostname  
 
 # Install PHP extensions
-sudo apt install php8.1-mysql php8.1-gd php8.1-xml php8.1-curl php8.1-zip  
+sudo apt install php8.1-mysql php8.1-gd php8.1-xml php8.1-curl php8.1-zip php8.1-mbstring
 
 # Activate extensions
 sudo phpenmod mysql gd xml curl zip mbstring
