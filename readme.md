@@ -1,5 +1,5 @@
 Download the shell Script by running
-  wget https://github.com/shanesipe/installopenemr
+  wget https://github.com/shanesipe/installopenemr/blob/main/install.sh
    
    cd installopenemr
 
