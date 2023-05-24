@@ -1,6 +1,6 @@
 Download the shell Script by running
   
-  sudo git clone https://github.com/shanesipe/installopenemr/blob/main/install.sh
+  sudo git clone https://github.com/shanesipe/installopenemr
    
    cd installopenemr
 
