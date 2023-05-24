@@ -45,6 +45,10 @@ post_max_size = 30M
 memory_limit = 256M
 mysqli.allow_local_infile = On
 
+# Save and exit 
+ctrl + o 
+ctrl + x
+
 # Restart Apache
 sudo systemctl restart apache2
 
@@ -55,16 +59,22 @@ wget https://sourceforge.net/projects/openemr/files/latest/download -O openemr.z
 unzip openemr.zip
 
 # Move to Apache document root
+sudo mv openemr-7.0.1 openemr
+
 sudo mv openemr /var/www/html/
 
 # Import SQL schema
 mysql -u $dbuser -p $dbname < /var/www/html/openemr/sql_upgrade.sql 
 
+# Configure OpenEMR after setup
+sudo nano /var/www/html/openemr/sites/default/config.php
+# Set values for $host, $port, $login, $pass, $dbase
+
+# Save and exit 
+ctrl + o 
+ctrl + x
+
+
 # Open in web browser and complete setup
 echo "OpenEMR installed! Access at http://$hostname/openemr"
 echo "Complete the setup wizard. Then login with admin username '$admin_user' and password '$admin_pass'"
-
-# Configure OpenEMR after setup
-#sudo nano /var/www/html/openemr/sites/default/config.php
-# Set values for $host, $port, $login, $pass, $dbase
-
