@@ -37,20 +37,6 @@ sudo phpenmod mysql gd xml curl zip mbstring
 # Edit PHP config
 sudo nano /etc/php/8.1/apache2/php.ini   
 
-# Set values  
-short_open_tag = Off   
-display_errors = Off
-register_globals = Off
-max_input_vars = 3000
-max_execution_time = 60
-max_input_time = -1
-post_max_size = 30M
-memory_limit = 256M
-mysqli.allow_local_infile = On
-
-# Save and exit 
-ctrl + o
-ctrl + x
 
 # Download OpenEMR
 wget https://sourceforge.net/projects/openemr/files/latest/download -O openemr.zip
