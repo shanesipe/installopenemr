@@ -52,6 +52,18 @@ mysqli.allow_local_infile = On
 ctrl + o
 ctrl + x
 
+# Download OpenEMR
+wget https://sourceforge.net/projects/openemr/files/latest/download -O openemr.zip
+
+# Unzip OpenEMR
+unzip openemr.zip
+
+# Move to Apache document root
+sudo mv openemr /var/www/html/
+
+# Import SQL schema
+mysql -u $dbuser -p $dbname < /var/www/html/openemr/sql_upgrade.sql
+
 # Edit Apache config
 sudo nano /etc/apache2/apache2.conf
 
@@ -76,17 +88,7 @@ ctrl + x
 # Restart Apache
 sudo systemctl restart apache2
 
-# Download OpenEMR
-wget https://sourceforge.net/projects/openemr/files/latest/download -O openemr.zip
 
-# Unzip OpenEMR
-unzip openemr.zip
-
-# Move to Apache document root
-sudo mv openemr /var/www/html/
-
-# Import SQL schema
-mysql -u $dbuser -p $dbname < /var/www/html/openemr/sql_upgrade.sql
 
 # Open in web browser and complete setup
 echo "OpenEMR installed! Access at http://$hostname/openemr"
