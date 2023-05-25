@@ -2,19 +2,18 @@ Installation
 
 To install OpenEMR, follow these steps:
 
-    Clone this repository:
+ #   Clone this repository:
 
 sudo git clone https://github.com/shanesipe/installopenemr 
-
-    Change to the repository directory:
+#Change to the repository directory:
 
 cd installopenemr
 
-    Make the install script executable:
+  #  Make the install script executable:
 
 sudo chmod 700 install.sh
 
-    Run the install script with sudo:
+   # Run the install script with sudo:
 
 sudo ./install.sh
 
