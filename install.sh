@@ -35,14 +35,15 @@ sudo apt install php8.1-mysql php8.1-gd php8.1-xml php8.1-curl php8.1-zip
 sudo phpenmod mysql gd xml curl zip mbstring
 
 # Edit PHP config
-sudo nano /etc/php/8.1/apache2/php.ini   
-
+sudo mv /etc/php/8.1/apache2/php.ini /etc/php/8.1/apache2/php.ini.bk   
+sudo mv /installopenemr/php.ini /etc/php/8.1/apache2/php.ini
 
 # Download OpenEMR
-wget https://sourceforge.net/projects/openemr/files/latest/download -O openemr.zip
+sudo wget https://sourceforge.net/projects/openemr/files/latest/download -O openemr.zip
 
 # Unzip OpenEMR
 unzip openemr.zip
+sudo mv openemr-7.0.1 openemr
 
 # Move to Apache document root
 sudo mv openemr /var/www/html/
@@ -51,25 +52,8 @@ sudo mv openemr /var/www/html/
 mysql -u $dbuser -p $dbname < /var/www/html/openemr/sql_upgrade.sql
 
 # Edit Apache config
-sudo nano /etc/apache2/apache2.conf
-
-# Add lines
-<Directory "/var/www/html/openemr">
-                AllowOverride FileInfo=All
-                Require all granted
-</Directory>  
-
-<Directory "/var/www/html/openemr/sites">
-                AllowOverride None
-</Directory>
-
-<Directory "/var/www/html/openemr/sites/*/documents">
-                Require all denied
-</Directory>
-
-# Save and exit
-ctrl + o  
-ctrl + x   
+sudo mv /etc/apache2/apache2.conf /etc/apache2/apache2.conf.bk
+sudo mv /installopenemr/apache2.conf /etc/apache2/apache2.conf
 
 # Restart Apache
 sudo systemctl restart apache2
