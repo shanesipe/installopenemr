@@ -1,7 +1,11 @@
 #!/bin/bash
 
+#update ubuntu
+sudo apt update -y
+sudo apt upgrade -y
+
 # Install Apache, MariaDB, PHP 8.1, and unzip  
-sudo apt install apache2 mariadb-server php8.1 unzip php8.1-mbstring
+sudo apt install apache2 mariadb-server php8.1 unzip php8.1-mbstring php8.1-mysql php8.1-gd php8.1-xml php8.1-curl php8.1-zip  
 
 # Enable Apache rewrite module  
 sudo a2enmod rewrite  
@@ -23,9 +27,6 @@ mysql -u root -p -e "CREATE DATABASE $dbname; CREATE USER '$dbuser' IDENTIFIED B
 
 # Prompt for hostname
 read -p "Enter your server's hostname: " hostname   
-
-# Install PHP extensions
-sudo apt install php8.1-mysql php8.1-gd php8.1-xml php8.1-curl php8.1-zip   
 
 # Activate extensions
 sudo phpenmod mysql gd xml curl zip mbstring
