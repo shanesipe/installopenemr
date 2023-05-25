@@ -53,7 +53,7 @@ mysql -u $dbuser -p $dbname < /var/www/html/openemr/sql_upgrade.sql
 
 # Edit Apache config
 sudo mv /etc/apache2/apache2.conf /etc/apache2/apache2.conf.bk
-sudo mv /installopenemr/apache2.conf /etc/apache2/apache2.conf
+sudo mv /home/ubuntu/installopenemr/apache2.conf /etc/apache2/apache2.conf
 
 # Restart Apache
 sudo systemctl restart apache2
