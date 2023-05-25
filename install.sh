@@ -42,7 +42,7 @@ sudo mv /installopenemr/php.ini /etc/php/8.1/apache2/php.ini
 sudo wget https://sourceforge.net/projects/openemr/files/latest/download -O openemr.zip
 
 # Unzip OpenEMR
-unzip openemr.zip
+sudo unzip openemr.zip
 sudo mv openemr-7.0.1 openemr
 
 # Move to Apache document root
