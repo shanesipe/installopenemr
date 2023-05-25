@@ -17,28 +17,13 @@ sudo ./install.sh
     OpenEMR database name
     OpenEMR database username
     OpenEMR database password
-    OpenEMR admin username
-    OpenEMR admin password
     Your server's hostname
 
 Enter the requested information.
 
     The script will install Apache, MariaDB, PHP, and all required extensions. It will also download and install the OpenEMR software.
     php.ini files
-# Set values  
-short_open_tag = Off   
-display_errors = Off
-register_globals = Off
-max_input_vars = 3000
-max_execution_time = 60
-max_input_time = -1
-post_max_size = 30M
-memory_limit = 256M
-mysqli.allow_local_infile = On
 
-# Save and exit 
-ctrl + o
-ctrl + x
 
     After installation completes, the script will prompt you to complete the OpenEMR setup wizard. Open your web browser and go to http://your-hostname/openemr.
 
