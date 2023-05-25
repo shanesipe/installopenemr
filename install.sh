@@ -21,10 +21,6 @@ read -p "Enter OpenEMR database password: " dbpass
 # Create OpenEMR database and user
 mysql -u root -p -e "CREATE DATABASE $dbname; CREATE USER '$dbuser' IDENTIFIED BY '$dbpass'; GRANT ALL ON $dbname.* TO '$dbuser';"
 
-# Prompt for admin username and password
-read -p "Enter OpenEMR admin username: " admin_user   
-read -p "Enter OpenEMR admin password: " admin_pass
-
 # Prompt for hostname
 read -p "Enter your server's hostname: " hostname   
 
@@ -49,7 +45,7 @@ sudo mv openemr-7.0.1 openemr
 sudo mv openemr /var/www/html/
 
 # Import SQL schema
-mysql -u $dbuser -p $dbname < /var/www/html/openemr/sql_upgrade.sql
+#mysql -u $dbuser -p $dbname < /var/www/html/openemr/sql_upgrade.sql
 
 # Edit Apache config
 sudo mv /etc/apache2/apache2.conf /etc/apache2/apache2.conf.bk
