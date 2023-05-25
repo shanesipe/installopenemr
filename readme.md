@@ -1,14 +1,20 @@
-Download the shell Script by running
-  
-  sudo git clone https://github.com/shanesipe/installopenemr
-   
-   cd installopenemr
+Installation
 
-    Make the script executable by running:
+To install OpenEMR, follow these steps:
+
+    Clone this repository:
+
+sudo git clone https://github.com/shanesipe/installopenemr 
+
+    Change to the repository directory:
+
+cd installopenemr
+
+    Make the install script executable:
 
 sudo chmod 700 install.sh
 
-    Run the script with sudo:
+    Run the install script with sudo:
 
 sudo ./install.sh
 
@@ -21,14 +27,12 @@ sudo ./install.sh
 
 Enter the requested information.
 
-    The script will install Apache, MariaDB, PHP, and all required extensions. It will also download and install the OpenEMR software.
-    php.ini files
+    The script will install Apache, MariaDB, PHP, and required extensions. It will also download and install OpenEMR.
 
-
-    After installation completes, the script will prompt you to complete the OpenEMR setup wizard. Open your web browser and go to http://your-hostname/openemr.
+    After installation completes, the script will prompt you to complete the OpenEMR setup wizard. Go to http://your-hostname/openemr.
 
     Follow the steps in the OpenEMR setup wizard. Use the admin username and password you entered in the script.
 
     After the setup wizard completes, OpenEMR will be installed and ready to use! You can log in with the admin account you created.
 
-    (Optional) The script will also configure config.php with your database settings. You can review and modify this file as needed.
+(Optional) The script will also configure config.php with your database settings. You can review and modify php.ini files.
