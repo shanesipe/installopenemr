@@ -5,7 +5,7 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # Install Apache, MariaDB, PHP 8.1, and unzip  
-sudo apt install apache2 mariadb-server php8.1 unzip php8.1-mbstring php8.1-mysql php8.1-gd php8.1-xml php8.1-curl php8.1-zip  
+sudo apt install apache2 mariadb-server php8.1 unzip php8.1-mbstring php8.1-mysql php8.1-gd php8.1-xml php8.1-curl php8.1-zip -y
 
 # Enable Apache rewrite module  
 sudo a2enmod rewrite  
