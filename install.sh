@@ -62,6 +62,6 @@ echo "OpenEMR installed! Access at http://$hostname/openemr"
 echo "Complete the setup wizard. Then login with admin username '$admin_user' and password '$admin_pass'"
 
 # Configure OpenEMR after setup
-sudo nano /var/www/html/openemr/sites/default/config.php
+#sudo nano /var/www/html/openemr/sites/default/config.php
 # Set values for $host, $port, $login, $pass, $dbase
 
