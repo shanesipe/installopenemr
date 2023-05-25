@@ -36,7 +36,7 @@ sudo phpenmod mysql gd xml curl zip mbstring
 
 # Edit PHP config
 sudo mv /etc/php/8.1/apache2/php.ini /etc/php/8.1/apache2/php.ini.bk   
-sudo mv /installopenemr/php.ini /etc/php/8.1/apache2/php.ini
+sudo mv ~/installopenemr/php.ini /etc/php/8.1/apache2/php.ini
 
 # Download OpenEMR
 sudo wget https://sourceforge.net/projects/openemr/files/latest/download -O openemr.zip
