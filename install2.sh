@@ -50,41 +50,26 @@ sudo phpenmod mysql gd xml curl zip mbstring
 # Edit PHP config
 sudo nano /etc/php/8.1/apache2/php.ini   
 
-# Set values  
-short_open_tag = Off   
-display_errors = Off 
-register_globals = Off
-max_input_vars = 3000
-max_execution_time = 60
-max_input_time = -1
-post_max_size = 30M
-memory_limit = 256M
-mysqli.allow_local_infile = On
+# Edit PHP config
+sudo mv /etc/php/8.1/apache2/php.ini /etc/php/8.1/apache2/php.ini.bk   
+sudo mv /home/ubuntu/installopenemr/php.ini /etc/php/8.1/apache2/php.ini
 
-# Save and exit 
-Ctrl + O 
-Ctrl + X
+# Download OpenEMR
+sudo wget https://sourceforge.net/projects/openemr/files/latest/download -O openemr.zip
+
+# Unzip OpenEMR
+sudo unzip openemr.zip
+sudo mv openemr-7.0.1 openemr
+
+# Move to Apache document root
+sudo mv openemr /var/www/html/
+
+# Import SQL schema
+#mysql -u $dbuser -p $dbname < /var/www/html/openemr/sql_upgrade.sql
 
 # Edit Apache config
-sudo nano /etc/apache2/apache2.conf
-
-# Add lines
-<Directory "/var/www/html/openemr">
-                AllowOverride FileInfo=All
-                Require all granted
-</Directory>  
-
-<Directory "/var/www/html/openemr/sites">
-                AllowOverride None
-</Directory>
-
-<Directory "/var/www/html/openemr/sites/*/documents">
-                Require all denied
-</Directory>
-
-# Save and exit
-Ctrl + O  
-Ctrl + X   
+sudo mv /etc/apache2/apache2.conf /etc/apache2/apache2.conf.bk
+sudo mv /home/ubuntu/installopenemr/apache2.conf /etc/apache2/apache2.conf
 
 # Restart Apache
 sudo systemctl restart apache2
